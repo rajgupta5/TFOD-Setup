@@ -1,6 +1,7 @@
 # TFOD-Setup
 
 Tensorflow Object Detection Setup (MACOS)
+
 Steps are mentioned in following link also (https://c17hawke.github.io/tfod-setup/)
 youtube video (https://www.youtube.com/watch?v=N8lWJmy2_jk)
 
@@ -8,7 +9,10 @@ TFOD API Tutorial
 https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html
 
 Tensorflow Model Garden
-https://github.com/tensorflow/models
+https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md
+
+COCO Dataset
+https://cocodataset.org/#explore
 
 
 Steps
