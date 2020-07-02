@@ -17,6 +17,9 @@ https://cocodataset.org/#explore
 
 Steps
 ======
+
+## Downloading
+
 0. Create a folder "TFOD" at some location and go inside the folder, follow below steps
 1. Download Tensorflow Repo by clicking Clone->DownloadZip
 (https://github.com/tensorflow/models/tree/v1.13.0)
@@ -34,7 +37,10 @@ Steps
     2. Rename faster_rcnn_inception_v2_coco_2018_01_28 -> faster_rcnn
     3. Inside models folder only keep research folder and delete rest
     4. Inside utils we have "images->test/train, training->labelmap.pbtxt, generate_tfrecord.py, xml_to_csv.py"
-    
+
+
+## Installation
+
 6. Creating virtual env using conda
     1. conda activate tfod
 7. Install Packages
@@ -44,6 +50,10 @@ Steps
 9. For protobuff to .py conversion
     1. Now in the TFOD->models->research folder run the following command- "protoc object_detection/protos/*.proto --python_out=."
 10. Go Inside TFOD->models->research folder and run command "python setup.py install" for installing object detection API
+
+
+## Setup Verification 
+
 11. Verification step to see if everything so far is working fine.
     1. jupyter notebook
     2. open file "object_detection_tutorial.ipynb" from TFOD->models->research->object_detection folder
@@ -52,6 +62,10 @@ Steps
             %matplotlib inline
             plt.figure(figsize=(50,50))
             plt.imshow(image_np)
+
+
+## Custom Training
+
 12. Paste all content present in utils into research folder. 
     Inside utils we have "images->test/train, training->labelmap.pbtxt, generate_tfrecord.py, xml_to_csv.py"
 13. Paste the downloaded model "faster_rcnn" into research folder
