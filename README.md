@@ -61,7 +61,12 @@ Steps
     1. python generate_tfrecord.py --csv_input=images/train_labels.csv --image_dir=images/train --output_path=train.record
     2. python generate_tfrecord.py --csv_input=images/test_labels.csv --image_dir=images/test --output_path=test.record
 15. Copy from research/object_detection/samples/config/ faster_rcnn_inception_v2_coco.config file into research/training
-16. Update num_classes, fine_tune_checkpoint ,and num_steps plus update input_path and label_map_path for both train_input_reader and eval_input_reader
+16. In the config file, Update 
+        1. num_classes=6, (no of classes can be found out in labelmap.pbtxt inside research->training folder)
+        2. fine_tune_checkpoint = "faster_rcnn/model.ckpt", 
+        3. num_steps = 250
+        4. input_path for both train_input_reader -> train.record and eval_input_reader -> test.record
+        5. label_map_path for both train_input_reader and eval_input_reader -> training/labelmap.pbtxt
 17. From research/object_detection/legacy/ copy train.py to research folder
 18. Copy deployment and nets folder from research/slim into the research folder
 19. NOW Run the following command from the research folder. This will start the training in your local system
