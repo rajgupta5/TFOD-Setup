@@ -18,6 +18,10 @@ Object Detection API Demo
 https://github.com/tensorflow/models/blob/master/research/object_detection/colab_tutorials/object_detection_tutorial.ipynb
 
 
+TFOD Tutorial
+https://github.com/EdjeElectronics/TensorFlow-Object-Detection-API-Tutorial-Train-Multiple-Objects-Windows-10
+
+
 Steps
 ======
 
