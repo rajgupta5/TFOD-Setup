@@ -42,7 +42,8 @@ Steps
 ## Installation
 
 6. Creating virtual env using conda
-    1. conda activate tfod
+    1. conda create -n tfod python=3.6
+    2. conda activate tfod
 7. Install Packages
     1. pip install pillow lxml Cython contextlib2 jupyter matplotlib pandas opencv-python tensorflow==1.14.0
 8. Install protobuf using conda package manager
