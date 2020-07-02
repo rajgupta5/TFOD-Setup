@@ -14,6 +14,9 @@ https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc
 COCO Dataset
 https://cocodataset.org/#explore
 
+Object Detection API Demo
+https://github.com/tensorflow/models/blob/master/research/object_detection/colab_tutorials/object_detection_tutorial.ipynb
+
 
 Steps
 ======
