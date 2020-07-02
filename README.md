@@ -2,10 +2,18 @@
 
 Tensorflow Object Detection Setup (MACOS)
 Steps are mentioned in following link also (https://c17hawke.github.io/tfod-setup/)
+youtube video (https://www.youtube.com/watch?v=N8lWJmy2_jk)
+
+TFOD API Tutorial
+https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html
+
+Tensorflow Model Garden
+https://github.com/tensorflow/models
 
 
 Steps
 ======
+0. Create a folder "TFOD" at some location and go inside the folder, follow below steps
 1. Download Tensorflow Repo by clicking Clone->DownloadZip
 (https://github.com/tensorflow/models/tree/v1.13.0)
 2. Download the model 
@@ -21,6 +29,7 @@ Steps
     1. Raname models-1.13.0.zip -> models
     2. Rename faster_rcnn_inception_v2_coco_2018_01_28 -> faster_rcnn
     3. Inside models folder only keep research folder and delete rest
+    4. Inside utils we have "images->test/train, training->labelmap.pbtxt, generate_tfrecord.py, xml_to_csv.py"
     
 6. Creating virtual env using conda
     1. conda activate tfod
@@ -29,6 +38,33 @@ Steps
 8. Install protobuf using conda package manager
     1. conda install -c anaconda protobuf
 9. For protobuff to .py conversion
-    1. Now in the models->research folder run the following command- "protoc object_detection/protos/*.proto --python_out=."
+    1. Now in the TFOD->models->research folder run the following command- "protoc object_detection/protos/*.proto --python_out=."
+10. Go Inside TFOD->models->research folder and run command "python setup.py install" for installing object detection API
+11. Verification step to see if everything so far is working fine.
+    1. jupyter notebook
+    2. open file "object_detection_tutorial.ipynb" from TFOD->models->research->object_detection folder
+    3. Run all the cells
+    4. in last cell run below:
+            %matplotlib inline
+            plt.figure(figsize=(50,50))
+            plt.imshow(image_np)
+12. Paste all content present in utils into research folder. 
+    Inside utils we have "images->test/train, training->labelmap.pbtxt, generate_tfrecord.py, xml_to_csv.py"
+13. Paste the downloaded model "faster_rcnn" into research folder
+    1. Cut and Paste "faster_rcnn" folder inside models->research folder
+    2. cd to the research folder and run the following python command "python xml_to_csv.py"
+14. Run the following to generate train and test records from research folder
+    1. python generate_tfrecord.py --csv_input=images/train_labels.csv --image_dir=images/train --output_path=train.record
+    2. python generate_tfrecord.py --csv_input=images/test_labels.csv --image_dir=images/test --output_path=test.record
+15. Copy from research/object_detection/samples/config/ faster_rcnn_inception_v2_coco.config file into research/training
+16. Update num_classes, fine_tune_checkpoint ,and num_steps plus update input_path and label_map_path for both train_input_reader and eval_input_reader
+17. From research/object_detection/legacy/ copy train.py to research folder
+18. Copy deployment and nets folder from research/slim into the research folder
+19. NOW Run the following command from the research folder. This will start the training in your local system
+    1. python train.py --logtostderr --train_dir=training/ --pipeline_config_path=training/faster_rcnn_inception_v2_coco.config
+
+
+
+
 
     
