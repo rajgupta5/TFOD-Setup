@@ -9,7 +9,7 @@ TFOD API Tutorial
 https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/index.html
 
 Tensorflow Model Garden
-https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md
+https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1_detection_zoo.md
 
 COCO Dataset
 https://cocodataset.org/#explore
